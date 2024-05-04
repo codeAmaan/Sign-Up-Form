@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Register Form</h1>
+        <span></span>
+        <form method="post">
+            <div class="input-box">
+                <input type="text" id="text" placeholder="Name" pattern="[A-Za-z ]+" required>
+            </div>
+            <div class="input-box">
+                <input type="email" id="email" placeholder="Email" autocomplete="email" required>
+            </div>
+            <div class="input-box temp">
+                <input type="password" id="password"  placeholder="Password" autocomplete="new-password" required>
+                <i id="eyeIcon" class="fa-solid fa-eye-slash"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="Conf-Psswd" autocomplete="new-password" placeholder="Confirm Password" required>
+            </div>
+            <div class="btn">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+        <p>Have an Account ? <a href="#">Login Here</a></p>
+    </div>
+    <script src="https://kit.fontawesome.com/817e920a8e.js" crossorigin="anonymous"></script>
+    <script>
+        let password = document.getElementById("password");
+        let eyeIcon = document.getElementById("eyeIcon");
+
+        eyeIcon.addEventListener("click", ()=>{
+            if(password.type == "password"){
+                password.type = "text"
+                eyeIcon.classList = `fa-solid fa-eye`; 
+            }
+            else{
+                password.type = "password"
+                eyeIcon.classList =  `fa-solid fa-eye-slash`
+            }
+        
+        })
+
+        password.addEventListener("click", ()=>{
+            eyeIcon.style.display = "block"
+        })
+
+    </script>
+</body>
+</html>
